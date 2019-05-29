@@ -1,0 +1,50 @@
+
+############## EXAMPLES #################
+# mage install
+# mage release
+# bump= mage release // will increase version
+# names=one,two mage release | install
+
+###### Build
+
+build_tags=""
+
+###### Clean
+
+to_clean_dirs=["PREP/","cross"]
+
+###### APPS
+
+md5Exe="/sbin/md5"
+shaExe="/usr/local/bin/shasum"
+curlExe="/usr/bin/curl"
+catExe="/bin/cat"
+gitExe="/usr/local/bin/git"
+tarExe="/usr/bin/tar"
+scpExe="/usr/bin/scp"
+whichExe="/usr/bin/which"
+
+###### Deployment
+
+# host must be available via ping check, requires ppk setup
+#[[scp]]
+#host="192.168.1.11"
+#path="main:/root/apps/"
+
+# host must be available via http check
+[[artifactory]]
+host="192.168.1.11"
+path="http://192.168.1.11:8081/artifactory/go-release-local/mailer/"
+creds="/Users/username/auths/.myartifactorycreds"
+
+###### Project Properties
+
+[[application]]
+name="mailer"
+ostargets=["darwin/amd64", "linux/amd64", "linux/arm/5"]
+osdeployscripts=["./pkgr/deploy_darwin.sh","./pkgr/deploy_linux.sh","./pkgr/deploy_linuxpi.sh"]
+package="github.com/colt3k/mailer"
+version="cmd/mailer/VERSION.txt"
+readme="cmd/mailer/README.md"
+changelog="cmd/mailer/CHANGES.txt"
+files=["./pkgr/bash_autocomplete","cmd/mailer/README.md"]

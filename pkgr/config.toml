@@ -1,0 +1,7 @@
+
+smtp_server="smtp.example.net"
+smtp_port=587
+smtp_username="user@domain.net"
+smtp_password="12345678"
+from="user@gmail.com"
+to="user2@gmail.com"
