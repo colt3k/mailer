@@ -45,6 +45,6 @@ ostargets=["darwin/amd64", "linux/amd64", "linux/arm/5"]
 osdeployscripts=["./pkgr/deploy_darwin.sh","./pkgr/deploy_linux.sh","./pkgr/deploy_linuxpi.sh"]
 package="github.com/colt3k/mailer"
 version="cmd/mailer/VERSION.txt"
-readme="cmd/mailer/README.md"
+readme="README.md"
 changelog="cmd/mailer/CHANGES.txt"
 files=["./pkgr/bash_autocomplete","cmd/mailer/README.md"]
