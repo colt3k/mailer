@@ -47,4 +47,4 @@ package="github.com/colt3k/mailer"
 version="cmd/mailer/VERSION.txt"
 readme="README.md"
 changelog="cmd/mailer/CHANGES.txt"
-files=["./pkgr/bash_autocomplete","cmd/mailer/README.md"]
+files=["./pkgr/bash_autocomplete","README.md"]

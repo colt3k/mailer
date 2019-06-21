@@ -8,7 +8,7 @@ require (
 	github.com/colt3k/utils/io v0.0.1
 	github.com/colt3k/utils/lock v0.0.1
 	github.com/colt3k/utils/mathut v0.0.1
-	github.com/colt3k/utils/mymg v0.0.1
+	github.com/colt3k/utils/mymg v0.0.2
 	github.com/colt3k/utils/netut v0.0.1
 	github.com/colt3k/utils/updater v0.0.1
 	github.com/colt3k/utils/version v0.0.1
