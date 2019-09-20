@@ -24,7 +24,7 @@ jobs:
       - name: Test
         env:
           GOPROXY: "https://proxy.golang.org"
-        run: go test -v
+        run: go test -v cmd/mailer/mailer.go
 
       - uses: actions/upload-artifact@master
         with:
