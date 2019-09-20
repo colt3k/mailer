@@ -26,6 +26,12 @@ jobs:
           GOPROXY: "https://proxy.golang.org"
         run: go test -v cmd/mailer/mailer.go
 
+      - name: location
+        run: which mailer
+
+      - name: current loc
+        run: pwd
+
       - uses: actions/upload-artifact@master
         with:
           name: my-artifact
