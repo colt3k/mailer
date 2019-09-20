@@ -21,10 +21,10 @@ jobs:
           GOPOXY: "https://proxy.golang.org"
         run: go build cmd/mailer/mailer.go
 
-      #- name: Test
-      #  env:
-      #    GOPROXY: "https://proxy.golang.org"
-      #  run: go test -v cmd/mailer/mailer.go
+      - name: Test
+        env:
+          GOPROXY: "https://proxy.golang.org"
+        run: go test -v cmd/mailer/mailer.go
 
       - uses: actions/upload-artifact@master
         with:
