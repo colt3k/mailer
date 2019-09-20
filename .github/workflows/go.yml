@@ -20,15 +20,15 @@ jobs:
         env:
           GOPOXY: "https://proxy.golang.org"
         run: |
-            pwd
             go build cmd/mailer/mailer.go
+            ls -lht
 
-      - name: Test
-        env:
-          GOPROXY: "https://proxy.golang.org"
-        run: go test -v cmd/mailer/mailer.go
+      #- name: Test
+      #  env:
+      #    GOPROXY: "https://proxy.golang.org"
+      #  run: go test -v cmd/mailer/mailer.go
 
-      - uses: actions/upload-artifact@master
-        with:
-          name: my-artifact
-          path: /home/work/mailer  # path to upload from i.e. /home/work/<binary>
+      #- uses: actions/upload-artifact@master
+      #  with:
+      #    name: my-artifact
+      #    path: /home/runner/work/mailer  # path to upload from i.e. /home/work/<binary>
