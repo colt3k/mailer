@@ -19,18 +19,12 @@ jobs:
       - name: Build
         env:
           GOPOXY: "https://proxy.golang.org"
-        run: go build cmd/mailer/mailer.go
+        run: go build -o /home/work/mailer cmd/mailer/mailer.go
 
       - name: Test
         env:
           GOPROXY: "https://proxy.golang.org"
         run: go test -v cmd/mailer/mailer.go
-
-      - name: location
-        run: which mailer
-
-      - name: current loc
-        run: pwd
 
       - uses: actions/upload-artifact@master
         with:
