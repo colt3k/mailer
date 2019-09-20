@@ -29,4 +29,4 @@ jobs:
       - uses: actions/upload-artifact@master
         with:
           name: my-artifact
-          path: home/work/mailer  # path to upload from i.e. /home/work/<binary>
+          path: /home/work/mailer  # path to upload from i.e. /home/work/<binary>
