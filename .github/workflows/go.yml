@@ -28,5 +28,5 @@ jobs:
 
       - uses: actions/upload-artifact@master
         with:
-          name: my-artifact
+          name: mailer
           path: ./mailer  # path to upload from i.e. /home/work/<binary>
