@@ -16,6 +16,13 @@ jobs:
       - name: Checkout source code
         uses: actions/checkout@v1   # checked out to /home/work/<repo name>, can overwrite with path arg
 
+      - name: Restore Cache
+        uses: actions/cache@preview
+        id: cache
+        with:
+          path: ~/go/pkg/mod
+          key: ${{ runner.os }}-${{ hashFiles('**/go.sum') }}
+
       - name: Build
         env:
           GOPOXY: "https://proxy.golang.org"
