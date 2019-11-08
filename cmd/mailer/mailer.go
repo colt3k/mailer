@@ -102,7 +102,7 @@ func setupFlags() {
 		&mycli.StringFlg{Variable: &from, Name: "from", Usage: "Who is the email from `user@domain.com`"},
 		&mycli.StringFlg{Variable: &to, Name: "to", Usage: "Whom to send the email to `user@domain.com`"},
 		&mycli.StringFlg{Variable: &cc, Name: "cc", Usage: "Whom to cc on the email `user@domain.com`"},
-		&mycli.StringFlg{Variable: &ccname, Name: "ccname", Usage: "Name to cc on the email `Joe`"},
+		&mycli.StringFlg{Variable: &ccname, Name: "ccname", Usage: "Name to cc on the email `John`"},
 		&mycli.StringFlg{Variable: &subject, Name: "subject", ShortName: "s", Usage: "Subject of the Email", Value: subject},
 		&mycli.BoolFlg{Variable: &html, Name: "html", Usage: "Message body default plain set for html"},
 		&mycli.StringFlg{Variable: &msg, Name: "message", ShortName: "m", Usage: "Message body to send in either quoted plaintext or html", Value: msg},
