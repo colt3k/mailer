@@ -18,7 +18,7 @@ func CheckUpdate(appName string) {
 
 	var cons []updater.Connection
 
-	if b, err := hc.Reachable("http://domain:8081", "main", 2); b && err == nil {
+	if b, err := hc.Reachable("http://domain:8081", "main", 2, false); b && err == nil {
 		c := updater.Connection{
 			Name:               "main",
 			User:               "ronly",
