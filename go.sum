@@ -25,6 +25,7 @@ github.com/colt3k/utils/encode v0.0.1 h1:hdJVDGzOUuhgtCTYWCHrocWVbKLQs84jfdqEJDK
 github.com/colt3k/utils/encode v0.0.1/go.mod h1:WVkLaBMJuvVnzm7MQuhLddJ+jLKYVzBVTUXIHOupGD8=
 github.com/colt3k/utils/file v0.0.1 h1:/ViT2V2zdHq8UW6E2jbiPHKyAJDLJZyhebAmUQ+k4tc=
 github.com/colt3k/utils/file v0.0.1/go.mod h1:PxGygEQubP4BH7nv5HaQnw4FYhOVLojlPvHtErMpFSI=
+github.com/colt3k/utils/file v0.0.2 h1:GSvOzChJFp2Xg6R3ultlWVH7QJE08Kq88gyLbgmeCX8=
 github.com/colt3k/utils/file v0.0.2/go.mod h1:nl43zYnoE3OXfdZ5mpUUjKOz6oAzJFkzvVCk1GdTJ5Q=
 github.com/colt3k/utils/hash v0.0.1 h1:QRy/iexxbMPiSeFchj/JM5c52k/byrAB27mzr733cKA=
 github.com/colt3k/utils/hash v0.0.1/go.mod h1:G10f8mRqYjCn5O0eGoHO6duHNS3k1ciApdVVvDad7kI=
@@ -42,6 +43,8 @@ github.com/colt3k/utils/mymg v0.0.2 h1:9KWof1dUeyyzwj5DkQOlxeQ58G1+1n8fbLoSWbz6q
 github.com/colt3k/utils/mymg v0.0.2/go.mod h1:ZwCmUxVi8ADgKEg9/4qtyFL09j+YX2oolLdxOvBLHp8=
 github.com/colt3k/utils/mymg v0.0.7 h1:XWXMVDpwrqpqdphMlwe8daVDc5iv534M9gdwzozEbAg=
 github.com/colt3k/utils/mymg v0.0.7/go.mod h1:r+AsZKnynnW/o1gpxBaKbGdLxVOspcYBSf+k8s7zq1M=
+github.com/colt3k/utils/mymg v0.0.8 h1:Vn0B5JSUPtDub/S14x8riuU5CvLLAjMZV1FOVrntZtk=
+github.com/colt3k/utils/mymg v0.0.8/go.mod h1:r+AsZKnynnW/o1gpxBaKbGdLxVOspcYBSf+k8s7zq1M=
 github.com/colt3k/utils/netut v0.0.1 h1:KEgxUX5rY+v2gNaXBTnmeyO94VNo0ZSsSbjMojS2870=
 github.com/colt3k/utils/netut v0.0.1/go.mod h1:OTcQKaUjhExTGqzJJ6jg43uhGkAL+4JPDOpMiGQx6PU=
 github.com/colt3k/utils/netut v0.0.3 h1:Czm2c9Y4w6kbjHFFeNYqkJOWfannaF0WrbAtVZTYXSI=
@@ -59,6 +62,7 @@ github.com/colt3k/utils/updater v0.0.5 h1:p2RyQZmyRnmQGbQT7m32k/LywMo7I6A8UCj8m5
 github.com/colt3k/utils/updater v0.0.5/go.mod h1:mi+RwDZ9JUkyP/2703y7i8Vj1fJa5PV/PKl1JkaEzgQ=
 github.com/colt3k/utils/version v0.0.1 h1:W9TXRcKPlO/7WGadmRIuaW16auMjyMmAFh2q6XFO4/s=
 github.com/colt3k/utils/version v0.0.1/go.mod h1:iqXaSNAN0EzwP4v5fMbJMeJoHqmfAV8ZKCbOE+c02xY=
+github.com/colt3k/utils/version v0.0.2 h1:keisacNU6ooZCBhigLDOYMXuofkOI1zft72YJLj6zL8=
 github.com/colt3k/utils/version v0.0.2/go.mod h1:iqXaSNAN0EzwP4v5fMbJMeJoHqmfAV8ZKCbOE+c02xY=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
