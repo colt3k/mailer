@@ -15,7 +15,7 @@ import (
 	"github.com/colt3k/utils/lock"
 	"github.com/colt3k/utils/mathut"
 	"github.com/colt3k/utils/version"
-	"github.com/go-mail/mail"
+	"github.com/colt3k/mail"
 
 	"go.collins-tech.com/coltek/mailer/internal/update"
 )
@@ -221,13 +221,14 @@ func run() {
 	}
 
 	d := mail.NewDialer(smtpServer, int(smtpPort), smtpUser, smtpPass)
+
 	if smtpPort != 25 {
 		d.StartTLSPolicy = mail.MandatoryStartTLS
 	} else {
 		d.SSL = false
 		d.StartTLSPolicy = mail.NoStartTLS
 	}
-	d.Timeout = 5 * time.Second
+	d.Timeout = 20 * time.Second
 	log.Logln(log.DEBUG, "Sending")
 	if err := d.DialAndSend(m); err != nil {
 		log.Logf(log.FATAL, "error sending mail\n%+v", err)

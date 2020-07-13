@@ -1,6 +1,7 @@
 module go.collins-tech.com/coltek/mailer
 
 require (
+	github.com/colt3k/mail v2.3.2+incompatible
 	github.com/colt3k/mycli v0.0.11
 	github.com/colt3k/nglog v0.0.11
 	github.com/colt3k/utils/config v0.0.1
@@ -13,7 +14,6 @@ require (
 	github.com/colt3k/utils/netut v0.0.5
 	github.com/colt3k/utils/updater v0.0.5
 	github.com/colt3k/utils/version v0.0.2
-	github.com/go-mail/mail v2.3.1+incompatible
 	github.com/gorilla/http v0.0.0-20190627042742-d268792bdee7 // indirect
 	github.com/iancoleman/orderedmap v0.0.0-20190318233801-ac98e3ecb4b0 // indirect
 	github.com/magefile/mage v1.9.0 // indirect
