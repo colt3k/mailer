@@ -7,6 +7,7 @@ import (
 	"strings"
 	"time"
 
+	"github.com/colt3k/mail"
 	"github.com/colt3k/mycli"
 	log "github.com/colt3k/nglog/ng"
 	"github.com/colt3k/utils/config"
@@ -15,7 +16,6 @@ import (
 	"github.com/colt3k/utils/lock"
 	"github.com/colt3k/utils/mathut"
 	"github.com/colt3k/utils/version"
-	"github.com/colt3k/mail"
 
 	"go.collins-tech.com/coltek/mailer/internal/update"
 )
@@ -25,7 +25,7 @@ const (
 	title       = "Mailer"
 	description = "Send mail via SMTP"
 	author      = "Gil Collins"
-	copyright   = "(c) 2018 ColTech Inc.,"
+	copyright   = "(c) 2021 ColTech Inc.,"
 	companyName = "colt3k"
 )
 
@@ -95,7 +95,6 @@ func setupFlags() {
 	c.Author = author
 	c.Copyright = copyright
 	c.PostGlblAction = func() error { return setLogger() }
-	c.BashCompletion = mycli.BashCompletionMain
 	c.Flgs = []mycli.CLIFlag{
 		&mycli.BoolFlg{Variable: &skipUpdateCheck, Name: "skip_update", ShortName: "skip", Usage: "set flag to skip update check", Value: false},
 		&mycli.StringFlg{Variable: &logDir, Name: "log_dir", ShortName: "ld", Usage: "set logging directory", Value: file.HomeFolder()},
@@ -121,20 +120,17 @@ func setupFlags() {
 			Name:           "update",
 			Usage:          "check for updates",
 			Action:         func() { update.CheckUpdate(appName) },
-			BashCompletion: mycli.BashCompletionSub,
 		},
 		{
 			Name:           "buildconfig",
 			ShortName:      "bc",
 			Usage:          "build generic configuration you can fill in",
 			Action:         func() { buildConfig() },
-			BashCompletion: mycli.BashCompletionSub,
 		},
 		{
 			Name:           "send",
 			Usage:          "send email",
 			Action:         func() { run() },
-			BashCompletion: mycli.BashCompletionSub,
 		},
 	}
 	//Executes validation or processes input
