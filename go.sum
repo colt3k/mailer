@@ -41,6 +41,8 @@ github.com/colt3k/utils/mymg v0.0.15 h1:YpGx+BNEMmgWtrxid3bwE/VZa5qv4DWms4nUZdxY
 github.com/colt3k/utils/mymg v0.0.15/go.mod h1:r+AsZKnynnW/o1gpxBaKbGdLxVOspcYBSf+k8s7zq1M=
 github.com/colt3k/utils/mymg v0.0.16 h1:ZiEBdD3nQdb4lvN7c/WQoNCqg5iN7B0eD7YKbZ2GJSI=
 github.com/colt3k/utils/mymg v0.0.16/go.mod h1:r+AsZKnynnW/o1gpxBaKbGdLxVOspcYBSf+k8s7zq1M=
+github.com/colt3k/utils/mymg v0.0.17 h1:+AA1zvAWX/fmucsRMldAlZ/jLuJNOHdzHcuUU2xLRes=
+github.com/colt3k/utils/mymg v0.0.17/go.mod h1:r+AsZKnynnW/o1gpxBaKbGdLxVOspcYBSf+k8s7zq1M=
 github.com/colt3k/utils/netut v0.0.1/go.mod h1:OTcQKaUjhExTGqzJJ6jg43uhGkAL+4JPDOpMiGQx6PU=
 github.com/colt3k/utils/netut v0.0.5/go.mod h1:i714XPZ0erBxLBCb9m8F4n1syPfaPdhnHJAildN9xgg=
 github.com/colt3k/utils/netut v0.0.8 h1:mFi5CAehMZQFmTHwvShu0kS4mnEQBMGE3PFNz3NcSk0=
