@@ -1,52 +1,56 @@
-
 ############## EXAMPLES #################
 # mage install
 # mage release
 # bump= mage release // will increase version
 # names=one,two mage release | install
 
-###### Build
+# Build Options
+[build]
+tags = ''
+useAltApps = 'yes'
 
-build_tags=""
+# Directories to clean when complete
+[postclean]
+dirs = ['PREP/', 'cross']
+files = []
 
-###### Clean
+# Application paths
+[apps]
+md5Exe = '/sbin/md5'
+sha1Exe = '/usr/local/bin/sha1sum'
+sha256Exe = '/usr/local/bin/sha256sum'
+curlExe = '/usr/bin/curl'
+catExe = '/bin/cat'
+gitExe = '/usr/local/bin/git'
+tarExe = '/usr/bin/tar'
+scpExe = '/usr/bin/scp'
+sftpExe = '/usr/bin/sftp'
+upxExe = '/usr/local/bin/upx'
+whichExe = '/usr/bin/which'
 
-to_clean_dirs=["PREP/","cross"]
-
-###### APPS
-
-md5Exe="/sbin/md5"
-sha1Exe="/usr/local/bin/sha1sum"
-sha256Exe="/usr/local/bin/sha256sum"
-curlExe="/usr/bin/curl"
-catExe="/bin/cat"
-gitExe="/usr/local/bin/git"
-tarExe="/usr/bin/tar"
-scpExe="/usr/bin/scp"
-upxExe="/usr/local/bin/upx"
-whichExe="/usr/bin/which"
-
-###### Deployment
-
-# host must be available via ping check, requires ppk setup
+# Array of Secure Copy Configurations
+# - host must be available via ping check, requires ppk setup
 #[[scp]]
-#host="192.168.1.11"
-#path="main:/apps/"
+#host = '192.168.1.11'
+#path = 'main:/apps/'
+#skip_ping = 'false'
 
-# host must be available via http check
+# Array of Artifactory instances
+# - host must be available via http check
 [[artifactory]]
-host="192.168.1.11"
-path="http://192.168.1.11:8081/artifactory/go-release-local/mailer/"
-creds="/Users/username/auths/.myartifactorycreds"
+host = '192.168.1.11'
+path = 'http://192.168.1.11:8081/artifactory/go-release-local/mailer/'
+creds = '/Users/username/auths/.myartifactorycreds'
 
-###### Project Properties
-
-[[application]]
-name="mailer"
-ostargets=["darwin/amd64", "linux/amd64", "linux/arm/5"]
-osdeployscripts=["./pkgr/deploy_darwin.sh","./pkgr/deploy_linux.sh","./pkgr/deploy_linuxpi.sh"]
-package="github.com/colt3k/mailer"
-version="cmd/mailer/VERSION.txt"
-readme="README.md"
-changelog="cmd/mailer/CHANGES.txt"
-files=["./pkgr/bash_autocomplete","README.md"]
+# Array of projects to build
+# - duplicate this section for each project to build
+[[project]]
+name = 'mailer'
+ostargets = ['darwin/amd64','darwin/arm64', 'linux/amd64', 'linux/arm/5']
+osdeployscripts = ['./pkgr/deploy_darwin.sh','./pkgr/deploy_darwinm1.sh', './pkgr/deploy_linux.sh', './pkgr/deploy_linuxpi.sh']
+package = 'github.com/colt3k/mailer'
+version = 'cmd/mailer/VERSION.txt'
+readme = 'README.md'
+changelog = 'cmd/mailer/CHANGES.txt'
+changelogfull = ''
+files = ['./pkgr/bash_autocomplete', 'README.md']
