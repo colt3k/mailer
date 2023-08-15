@@ -2,6 +2,7 @@ package main
 
 import (
 	"bytes"
+	"github.com/colt3k/mailer/internal/update"
 	"os"
 	"path/filepath"
 	"strings"
@@ -16,8 +17,6 @@ import (
 	"github.com/colt3k/utils/lock"
 	"github.com/colt3k/utils/mathut"
 	"github.com/colt3k/utils/version"
-
-	"go.collins-tech.com/coltek/mailer/internal/update"
 )
 
 const (
@@ -117,20 +116,20 @@ func setupFlags() {
 
 	c.Cmds = []*mycli.CLICommand{
 		{
-			Name:           "update",
-			Usage:          "check for updates",
-			Action:         func() { update.CheckUpdate(appName) },
+			Name:   "update",
+			Usage:  "check for updates",
+			Action: func() { update.CheckUpdate(appName) },
 		},
 		{
-			Name:           "buildconfig",
-			ShortName:      "bc",
-			Usage:          "build generic configuration you can fill in",
-			Action:         func() { buildConfig() },
+			Name:      "buildconfig",
+			ShortName: "bc",
+			Usage:     "build generic configuration you can fill in",
+			Action:    func() { buildConfig() },
 		},
 		{
-			Name:           "send",
-			Usage:          "send email",
-			Action:         func() { run() },
+			Name:   "send",
+			Usage:  "send email",
+			Action: func() { run() },
 		},
 	}
 	//Executes validation or processes input
