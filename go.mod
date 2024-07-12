@@ -1,19 +1,19 @@
 module github.com/colt3k/mailer
 
-go 1.17
+go 1.22
 
 require (
 	github.com/colt3k/mail v2.3.2+incompatible
-	github.com/colt3k/mycli v0.0.33
-	github.com/colt3k/nglog v0.0.28
+	github.com/colt3k/mycli v0.0.38
+	github.com/colt3k/nglog v0.0.29
 	github.com/colt3k/utils/config v0.0.4
 	github.com/colt3k/utils/file v0.0.10
-	github.com/colt3k/utils/io v0.0.18
+	github.com/colt3k/utils/io v0.0.19
 	github.com/colt3k/utils/lock v0.0.2
 	github.com/colt3k/utils/mathut v0.0.2
-	github.com/colt3k/utils/mymg v0.1.28
+	github.com/colt3k/utils/mymg v0.1.38
 	github.com/colt3k/utils/netut v0.0.23
-	github.com/colt3k/utils/updater v0.0.29
+	github.com/colt3k/utils/updater v0.0.35
 	github.com/colt3k/utils/version v0.0.3
 )
 
@@ -40,8 +40,8 @@ require (
 	github.com/pelletier/go-toml/v2 v2.1.1 // indirect
 	github.com/pkg/errors v0.9.1 // indirect
 	github.com/ufoscout/go-up v0.6.1 // indirect
-	golang.org/x/crypto v0.17.0 // indirect
-	golang.org/x/sys v0.15.0 // indirect
-	golang.org/x/term v0.15.0 // indirect
+	golang.org/x/crypto v0.25.0 // indirect
+	golang.org/x/sys v0.22.0 // indirect
+	golang.org/x/term v0.22.0 // indirect
 	gopkg.in/alexcesaro/quotedprintable.v3 v3.0.0-20150716171945-2caba252f4dc // indirect
 )
