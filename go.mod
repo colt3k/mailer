@@ -6,7 +6,7 @@ toolchain go1.24.10
 
 require (
 	github.com/colt3k/mail v2.3.2+incompatible
-	github.com/colt3k/mycli v0.0.40
+	github.com/colt3k/mycli v0.0.41
 	github.com/colt3k/nglog v0.0.32
 	github.com/colt3k/utils/config v0.0.4
 	github.com/colt3k/utils/file v0.0.13
