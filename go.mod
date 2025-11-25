@@ -13,7 +13,7 @@ require (
 	github.com/colt3k/utils/io v0.0.22
 	github.com/colt3k/utils/lock v0.0.3
 	github.com/colt3k/utils/mathut v0.0.3
-	github.com/colt3k/utils/mymg v0.1.44
+	github.com/colt3k/utils/mymg v0.1.46
 	github.com/colt3k/utils/netut v0.0.29
 	github.com/colt3k/utils/updater v0.0.42
 	github.com/colt3k/utils/version v0.0.5
@@ -24,10 +24,10 @@ replace golang.org/x/net => golang.org/x/net v0.19.0 //CVE-2023-48795
 require (
 	github.com/blang/semver v3.5.1+incompatible // indirect
 	github.com/colt3k/utils/archive v0.0.10 // indirect
-	github.com/colt3k/utils/crypt v0.0.14 // indirect
+	github.com/colt3k/utils/crypt v0.0.15 // indirect
 	github.com/colt3k/utils/debug v0.0.2 // indirect
 	github.com/colt3k/utils/encode v0.0.8 // indirect
-	github.com/colt3k/utils/hash v0.0.9 // indirect
+	github.com/colt3k/utils/hash v0.0.10 // indirect
 	github.com/colt3k/utils/osut v0.0.7 // indirect
 	github.com/colt3k/utils/ques v0.0.7 // indirect
 	github.com/colt3k/utils/stats v0.0.1 // indirect
