@@ -6,16 +6,16 @@ toolchain go1.24.10
 
 require (
 	github.com/colt3k/mail v2.3.2+incompatible
-	github.com/colt3k/mycli v0.0.41
+	github.com/colt3k/mycli v0.0.42
 	github.com/colt3k/nglog v0.0.32
 	github.com/colt3k/utils/config v0.0.4
-	github.com/colt3k/utils/file v0.0.13
-	github.com/colt3k/utils/io v0.0.22
+	github.com/colt3k/utils/file v0.0.14
+	github.com/colt3k/utils/io v0.0.24
 	github.com/colt3k/utils/lock v0.0.3
 	github.com/colt3k/utils/mathut v0.0.3
-	github.com/colt3k/utils/mymg v0.1.46
+	github.com/colt3k/utils/mymg v0.1.47
 	github.com/colt3k/utils/netut v0.0.29
-	github.com/colt3k/utils/updater v0.0.42
+	github.com/colt3k/utils/updater v0.0.43
 	github.com/colt3k/utils/version v0.0.5
 )
 
@@ -24,7 +24,7 @@ replace golang.org/x/net => golang.org/x/net v0.19.0 //CVE-2023-48795
 require (
 	github.com/blang/semver v3.5.1+incompatible // indirect
 	github.com/colt3k/utils/archive v0.0.10 // indirect
-	github.com/colt3k/utils/crypt v0.0.15 // indirect
+	github.com/colt3k/utils/crypt v0.0.16 // indirect
 	github.com/colt3k/utils/debug v0.0.2 // indirect
 	github.com/colt3k/utils/encode v0.0.8 // indirect
 	github.com/colt3k/utils/hash v0.0.10 // indirect
