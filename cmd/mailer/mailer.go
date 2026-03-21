@@ -19,6 +19,7 @@ import (
 	"github.com/colt3k/utils/version"
 )
 
+// Application metadata and default branding values shared by help output and logs.
 const (
 	appName     = "mailer"
 	title       = "Mailer"
@@ -28,6 +29,7 @@ const (
 	companyName = "colt3k"
 )
 
+// Flag-backed runtime state is populated during CLI parsing and then consumed by the selected command.
 var (
 	proxy      string
 	smtpServer string
@@ -51,8 +53,10 @@ var (
 	locked          bool
 )
 
+// cfg keeps the shared config package initialized for CLI/config integration.
 var cfg = config.NewConfig()
 
+// init acquires the process lock and sets the baseline logger before flags are parsed.
 func init() {
 	l = lock.New(appName)
 	if l.Try() {
@@ -66,6 +70,8 @@ func init() {
 	ca := log.NewConsoleAppender("*")
 	log.Modify(log.LogLevel(log.INFO), log.ColorsOn(), log.Appenders(ca, fa))
 }
+
+// setLogger rebuilds appenders after runtime options such as debug mode or log_dir have been resolved.
 func setLogger() error {
 	if logDir != file.HomeFolder() || mycli.Debug {
 		logFile = filepath.Join(logDir, companyName, appName+".log")
@@ -83,6 +89,8 @@ func setLogger() error {
 	}
 	return nil
 }
+
+// setupFlags registers CLI metadata, global flags, and subcommands before parsing user input.
 func setupFlags() {
 	c = mycli.NewCli(nil, nil)
 	c.Title = title
@@ -151,6 +159,7 @@ func main() {
 	os.Exit(0)
 }
 
+// buildConfig writes a starter TOML file using current values or safe placeholders for required fields.
 func buildConfig() {
 	var byt bytes.Buffer
 
@@ -185,6 +194,7 @@ func buildConfig() {
 	io.WriteOut(byt.Bytes(), "config_example.toml")
 }
 
+// run validates SMTP settings, builds the message, and submits it through the selected SMTP server.
 func run() {
 	if len(smtpServer) == 0 {
 		log.Logln(log.FATAL, "smtp server required")
@@ -217,6 +227,7 @@ func run() {
 
 	d := mail.NewDialer(smtpServer, int(smtpPort), smtpUser, smtpPass)
 
+	// Port 25 is treated as plain SMTP, while other ports require STARTTLS.
 	if smtpPort != 25 {
 		d.StartTLSPolicy = mail.MandatoryStartTLS
 	} else {
