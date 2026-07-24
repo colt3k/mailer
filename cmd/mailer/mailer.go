@@ -2,13 +2,14 @@ package main
 
 import (
 	"bytes"
-	"github.com/colt3k/mailer/internal/update"
 	"os"
 	"path/filepath"
-	"strings"
 	"time"
 
 	"github.com/colt3k/mail"
+	mailerconfig "github.com/colt3k/mailer/internal/config"
+	"github.com/colt3k/mailer/internal/message"
+	"github.com/colt3k/mailer/internal/update"
 	"github.com/colt3k/mycli"
 	log "github.com/colt3k/nglog/ng"
 	"github.com/colt3k/utils/config"
@@ -196,34 +197,17 @@ func buildConfig() {
 
 // run validates SMTP settings, builds the message, and submits it through the selected SMTP server.
 func run() {
-	if len(smtpServer) == 0 {
-		log.Logln(log.FATAL, "smtp server required")
+	cfg := mailerconfig.SMTPConfig{
+		Server: smtpServer,
+		Port:   smtpPort,
+		From:   from,
+		To:     to,
 	}
-	if len(from) == 0 {
-		log.Logln(log.FATAL, "from required")
-	}
-	if len(to) == 0 {
-		log.Logln(log.FATAL, "to required")
-	}
-	m := mail.NewMessage()
-	m.SetHeader("From", from)
-	m.SetHeader("To", to)
-	//CC
-	if len(cc) > 0 && len(ccname) > 0 {
-		m.SetAddressHeader("Cc", cc, ccname)
-	} else if len(cc) > 0 && len(ccname) <= 0 {
-		m.SetAddressHeader("Cc", cc, cc)
-	}
-	m.SetHeader("Subject", subject)
-	if html {
-		m.SetBody("text/html", msg)
-	} else {
-		m.SetBody("text/plain", msg)
+	if err := cfg.Validate(); err != nil {
+		log.Logln(log.FATAL, err.Error())
 	}
 
-	if len(strings.TrimSpace(filePath)) > 0 {
-		m.Attach(filePath)
-	}
+	m := message.BuildMessage(from, to, cc, ccname, subject, msg, html, filePath)
 
 	d := mail.NewDialer(smtpServer, int(smtpPort), smtpUser, smtpPass)
 

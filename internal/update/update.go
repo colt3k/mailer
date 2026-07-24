@@ -40,5 +40,5 @@ func CheckUpdate(appName string) {
 	for i, d := range cons {
 		log.Logf(log.DEBUG, "%d checking %s for update", i, d.Name)
 	}
-	artifactory.PerformUpdate(appName, cons, v, true)
+	artifactory.PerformUpdate(appName, cons, v, true, false)
 }

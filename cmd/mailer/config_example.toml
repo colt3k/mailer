@@ -1,0 +1,6 @@
+smtp_server="smtp.custom.com"
+smtp_port=465
+smtp_username=""
+smtp_password=""
+from="custom@from.com"
+to="custom@to.com"
